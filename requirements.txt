@@ -1,0 +1,11 @@
+matplotlib==3.10.1
+numpy==2.2.4
+openpyxl==3.1.2
+optuna==4.2.1
+pandas==2.2.3
+pydantic==2.11.2
+pydantic_core==2.33.1
+scikit-learn==1.6.1
+scipy==1.15.2
+seaborn==0.13.2
+xgboost==2.0.0

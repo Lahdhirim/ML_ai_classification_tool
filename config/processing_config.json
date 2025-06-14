@@ -1,5 +1,6 @@
 {
-    "input_raw_data_path": "data/raw_data.csv",
-    "mapping_file_path": "config/mapping.csv",
-    "output_processed_data_path": "data/processed_data.csv"
+    "input_data_filename": "data/raw_data.csv",
+    "train_processed_data_filename": "data/train_processed.csv",
+    "test_processed_data_filename": "data/test_processed.csv",
+    "test_size": 0.2
 }
