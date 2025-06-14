@@ -41,6 +41,9 @@ Several use cases can be supported with this template such as:
     * **`data/output/test_raw_predictions.csv`** → Raw predictions
     * **`data/output/test_KPIs.xlsx`** → Performance metrics (Accuracy, Recall, Precision, F1-score) for each trained model.
 
+<div style="text-align: center;">
+    <img src="imgs/pipelines.png" alt="CV" width="500"/>
+</div>
 
 ---
 
