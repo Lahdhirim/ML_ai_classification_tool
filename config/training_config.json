@@ -1,0 +1,51 @@
+{
+    "train_processed_data_filename": "data/train_processed.csv",
+    "features_selector": {
+        "features_path": "config/features.json",
+        "target_column": "target"
+    },
+    "n_splits": 5,
+    "models_params": {
+        "MLModels": {
+            "LogisticRegression": {
+                "enabled": true,
+                "C": 0.0015158466371499174,
+                "random_state": 42
+            },
+            "KNeighborsClassifier": {
+                "enabled": true,
+                "n_neighbors": 12,
+                "weights": "distance"
+            },
+            "RandomForest": {
+                "enabled": true,
+                "max_depth": 7,
+                "n_estimators": 118,
+                "criterion": "gini",
+                "random_state": 42
+            },
+            "XGBoost": {
+                "enabled": true,
+                "learning_rate": 0.01,
+                "max_depth": 5,
+                "n_estimators": 100,
+                "random_state": 42
+            }
+        },
+        "MLP": {
+            "enabled": true,
+            "activation_function": "logistic",
+            "hidden_layers_sizes": [
+                150,
+                150
+            ],
+            "max_iter": 10000,
+            "solver": "adam",
+            "alpha": 0.5,
+            "random_state": 42
+        }
+    },
+    "validation_raw_predictions_path": "data/output/validation_raw_predictions.csv",
+    "validation_kpis_path": "data/output/validation_KPIs.xlsx",
+    "trained_models_path": "models/trained_models.pkl"
+}
