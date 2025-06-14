@@ -1,0 +1,28 @@
+{
+    "train_processed_data_filename": "data/train_processed.csv",
+    "features_selector": {
+      "features_path": "config/features.json",
+      "target_column": "target"
+    },
+    "best_hyperparams_filename": "models/best_hyperparams.json",
+    "optuna": {
+      "n_trials": 20,
+      "cv": 5,
+      "direction": "maximize",
+      "scoring": "recall",
+      "models": {
+        "RandomForest": {
+          "n_estimators": {"type": "int", "low": 50, "high": 200},
+          "max_depth": {"type": "int", "low": 3, "high": 10},
+          "criterion": {"type": "categorical", "choices": ["gini", "entropy"]}
+        },
+        "LogisticRegression": {
+          "C": {"type": "float", "low": 0.001, "high": 10.0}
+        },
+        "KNeighborsClassifier": {
+          "n_neighbors": {"type": "int", "low": 3, "high": 15},
+          "weights": {"type": "categorical", "choices": ["uniform", "distance"]}
+        }
+      }
+    }
+}  

@@ -1,0 +1,23 @@
+{
+    "RandomForest": {
+        "best_params": {
+            "n_estimators": 54,
+            "max_depth": 7,
+            "criterion": "gini"
+        },
+        "best_score": 0.815748031496063
+    },
+    "LogisticRegression": {
+        "best_params": {
+            "C": 0.0038917830337558204
+        },
+        "best_score": 0.90708661417323
+    },
+    "KNeighborsClassifier": {
+        "best_params": {
+            "n_neighbors": 11,
+            "weights": "uniform"
+        },
+        "best_score": 0.7763779527559055
+    }
+}

@@ -6,8 +6,9 @@ from src.utils.schema import PipelinesDictSchema, DatasetSchema, PredictionSchem
 import pandas as pd
 from typing import List
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
+from src.base_pipeline import BasePipeline
 
-class TestingPipeline:
+class TestingPipeline(BasePipeline):
     
     """
     A pipeline for testing the performance of trained models on processed data.

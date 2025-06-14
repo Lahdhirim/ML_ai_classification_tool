@@ -11,8 +11,9 @@ from src.evaluators.ml_evaluator import MLEvaluator
 import copy
 from src.utils.model_saver import save_models
 from src.utils.utils_toolbox import load_csv_data
+from src.base_pipeline import BasePipeline
 
-class TrainingPipeline():
+class TrainingPipeline(BasePipeline):
     
     """
     Pipeline for training and evaluating multiple machine learning models using cross-validation.
