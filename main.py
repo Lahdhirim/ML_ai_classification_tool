@@ -13,15 +13,14 @@ from src.testing_pipeline import TestingPipeline
 
 if __name__ == "__main__":
     """
-    Main script for running the AI Tool in different operational modes.
+    Main script for running the AI Classification Tool in different operational modes.
 
-    This script provides a command-line interface to perform various tasks related to 
-    data processing, model training and testing.
+    This script provides a command-line interface to perform various tasks related to data processing, model training and testing.
     Depending on the selected mode, it loads the appropriate configuration and executes the corresponding pipeline.
     """
 
     # Parse command-line argument to determine which mode to run
-    parser = argparse.ArgumentParser(description="AI Tool")
+    parser = argparse.ArgumentParser(description="AI Classification Tool")
     parser.add_argument("mode", choices=["process_data", "train", "test"],
                         default="process_data", nargs="?", help="Choose mode: process_data, train or test")
     args = parser.parse_args()
@@ -46,4 +45,4 @@ if __name__ == "__main__":
         testing_pipeline.run()
     
     else:
-        print("Invalid mode. Please choose 'process_data', 'train', 'fine_tune', or 'inference'.")
+        print("Invalid mode. Please choose 'process_data', 'train' or 'test'")
