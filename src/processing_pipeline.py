@@ -2,6 +2,7 @@ from src.config_loaders.processing_config_loader import ProcessingConfig
 from src.preprocessing.data_processor import DataPreprocessor
 from src.preprocessing.train_test_splitter import TrainTestSplitter
 from colorama import Fore, Style
+from src.utils.schema import DatasetSchema
 
 class ProcessingPipeline():
     
@@ -10,7 +11,7 @@ class ProcessingPipeline():
 
     This pipeline performs the following key steps:
     1. Loads and preprocesses raw input data.
-    2. Splits the preprocessed data into training and testing sets.
+    2. Splits the preprocessed data into training and testing sets, ensuring no data leakage.
     3. Saves the resulting datasets.
 
     Attributes:
@@ -26,8 +27,10 @@ class ProcessingPipeline():
         # Load and preprocess the data
         data = DataPreprocessor(input_data_filename=self.processing_config.input_data_filename).transform()
 
-        # Perform train-test split
+        # Perform train-test split to keep test data separate for evaluation in real-world scenarios (unseen data)
         train, test = TrainTestSplitter(test_size=self.processing_config.test_size).transform(data)
+        intersection = set(train[DatasetSchema.ID]) & set(test[DatasetSchema.ID])
+        assert len(intersection) == 0, f"Some IDs appear in both train and test sets: {intersection}"
         
         # Save the processed data to CSV files
         train.to_csv(self.processing_config.train_processed_data_filename, index=False)

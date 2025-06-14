@@ -1,0 +1,7 @@
+{
+    "test_processed_data_filename": "data/test_processed.csv",
+    "saved_models_path": "models/trained_models.pkl",
+    "probability_threshold": 0.5,
+    "test_raw_predictions_path": "data/output/test_raw_predictions.csv",
+    "test_kpis_path": "data/output/test_KPIs.xlsx"
+}

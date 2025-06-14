@@ -1,8 +1,10 @@
 class DatasetSchema:
+    ID = "id"
     FEATURE_1 = "feature_1"
     FEATURE_2 = "feature_2"
     FEATURE_3 = "feature_3"
     TARGET = "target"
+    FOLD = "fold"
 
 class PredictionSchema:
     PREDICTION_AGGREGATED = "Prediction_Aggregated"

@@ -83,7 +83,7 @@ class TrainingPipeline():
             # Concatenate predictions
             predictions_df = pd.DataFrame(predictions)
             input_df = pd.DataFrame({DatasetSchema.FOLD: fold_index, 
-                                     DatasetSchema.NAME: val[DatasetSchema.NAME],
+                                     DatasetSchema.ID: val[DatasetSchema.ID],
                                      self.training_config.features_selector.target_column: y_val})
             results = results._append(pd.concat([input_df.reset_index(drop=True), predictions_df.reset_index(drop=True)], axis=1), ignore_index=True)
 
