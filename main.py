@@ -31,26 +31,26 @@ if __name__ == "__main__":
     # Launch the appropriate pipeline based on the selected mode
     if args.mode == "process_data":
         # Load processing config and run data preprocessing pipeline
-        processing_config = processing_config_loader(config_path = "config/processing_config.json")
-        processing_pipeline = ProcessingPipeline(processing_config = processing_config)
+        processing_config = processing_config_loader(config_path="config/processing_config.json")
+        processing_pipeline = ProcessingPipeline(config=processing_config)
         processing_pipeline.run()
     
     elif args.mode == "train":
         # Load training config and run model training pipeline
-        training_config = training_config_loader(config_path = "config/training_config.json")
-        training_pipeline = TrainingPipeline(training_config = training_config)
+        training_config = training_config_loader(config_path="config/training_config.json")
+        training_pipeline = TrainingPipeline(config=training_config)
         training_pipeline.run()
     
     elif args.mode == "test":
         # Load testing config and run model testing pipeline
-        testing_config = testing_config_loader(config_path = "config/testing_config.json")
-        testing_pipeline = TestingPipeline(testing_config = testing_config)
+        testing_config = testing_config_loader(config_path="config/testing_config.json")
+        testing_pipeline = TestingPipeline(config=testing_config)
         testing_pipeline.run()
     
     elif args.mode == "fine_tune":
         # Load tuning config and run hyperparameter tuning pipeline
-        tuning_config = tuning_config_loader(config_path = "config/tuning_config.json")
-        tuning_pipeline = TuningPipeline(tuning_config = tuning_config)
+        tuning_config = tuning_config_loader(config_path="config/tuning_config.json")
+        tuning_pipeline = TuningPipeline(config=tuning_config)
         tuning_pipeline.run()
     
     else:
