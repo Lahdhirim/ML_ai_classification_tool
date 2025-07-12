@@ -56,8 +56,8 @@ Make sure you have the following installed:
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Lahdhirim/ML_ai_classification_tool.git
-    cd ML_ai_classification_tool
+    git clone https://github.com/Lahdhirim/ML-ai-classification-tool.git
+    cd ML-ai-classification-tool
     ```
 2. Install dependencies:
     - Python packages:
